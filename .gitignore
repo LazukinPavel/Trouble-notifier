@@ -1,0 +1,6 @@
+em_notifier/config.py
+em_notifier/zappa_settings.json
+notes.txt
+
+venv/
+.idea/
