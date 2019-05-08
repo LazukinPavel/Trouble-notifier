@@ -4,7 +4,7 @@ from flask import Flask
 from flask import request
 from flask import jsonify
 
-from config import token, chats
+from config import token, chats     # TODO check usernames from getUpdates, collect chat IDs
 
 app = Flask(__name__)
 
@@ -30,10 +30,10 @@ def index():
 def listener():
     if request.method == 'POST':
         data = request.get_json()
-        msg = f"Huston, we have a problem! \n{data['name']}: {data['desc']} \n{data['trb']}"
+        msg = f"Huston, we have a problem! \n{data['name']}: {data['desc']}"
 
         for chat in chats:
-            send_message(chat, text=msg)
+            send_message(chat, text=msg)        # TODO send trb in file?
         return jsonify({'status': 'success'})
     return "<h1>I'm EM notifier</h1>"
 
