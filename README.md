@@ -1,1 +1,1 @@
-Notifier
+Telegram Notifier
